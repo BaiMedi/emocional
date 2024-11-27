@@ -1,0 +1,35 @@
+<div>
+    <h2>Diseña tu propia publicación emocional</h2>
+    <p>Comparte una experiencia emocional y transfórmala en una publicación.</p>
+    <form id="emotional-post-form">
+        <label for="emotion">Describe una experiencia emocional:</label><br>
+        <textarea id="emotion" name="emotion" rows="4" cols="50" placeholder="Escribe tu experiencia aquí..."></textarea><br><br>
+
+        <label for="emotion-type">Selecciona el tipo de emoción:</label><br>
+        <select id="emotion-type" name="emotion-type">
+            <option value="nostalgia">Nostalgia</option>
+            <option value="alegria">Alegría</option>
+            <option value="sorpresa">Sorpresa</option>
+        </select><br><br>
+
+        <label for="call-to-action">Escribe una llamada a la acción:</label><br>
+        <input type="text" id="call-to-action" name="call-to-action" placeholder="Ejemplo: Comparte tu experiencia aquí"><br><br>
+
+        <button type="button" onclick="generatePost()">Generar publicación</button>
+    </form>
+    <div id="result" style="margin-top:20px;">
+        <h3>Tu publicación generada:</h3>
+        <p id="generated-post"></p>
+    </div>
+</div>
+
+<script>
+    function generatePost() {
+        const emotion = document.getElementById('emotion').value;
+        const emotionType = document.getElementById('emotion-type').value;
+        const callToAction = document.getElementById('call-to-action').value;
+
+        const post = `¿Has sentido ${emotionType} recientemente? ${emotion} ${callToAction}`;
+        document.getElementById('generated-post').innerText = post;
+    }
+</script>
